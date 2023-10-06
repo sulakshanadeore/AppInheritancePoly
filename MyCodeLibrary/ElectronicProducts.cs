@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyCodeLibrary
 {
+	//Single level
     public class ElectronicProducts:Products
     {
 		private DateTime _mfgDate;
@@ -27,7 +28,9 @@ namespace MyCodeLibrary
 		public decimal CalculateDiscount()
 		{
 			decimal afterDiscountPrice = 0;
-			decimal amt=base.CalculateTotalPurchase();
+			float qty = base.Quantity;
+			decimal price = base.Price;
+			decimal amt=base.CalculateTotalPurchase(qty,price);
 			if (amt > 1000 && amt < 5000)
 			{
 				decimal discount = amt * Convert.ToDecimal(0.2);

@@ -4,16 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+//Validating the data (in the properties), transfer the data(using properties) from one app to another app
+//Business Logic Layer--->
 namespace MyCodeLibrary
 {
     public class Products
     {
 		private int _prodid;
 
+		//business rule
 		public int ProductID
 		{
 			get { return _prodid; }
-			set { _prodid = value; }
+			set 
+			{
+				if (value > 0)
+				{
+					_prodid = value;
+				}
+				else
+				{
+                    Console.WriteLine(	"Product id not valid");
+                }
+			}
 		}
 
 
@@ -22,7 +36,18 @@ namespace MyCodeLibrary
 		public string ProductName
 		{
 			get { return _prodname; }
-			set { _prodname = value; }
+			set
+			{
+				if (value.Length > 0 && value.Length < 20)
+				{
+					_prodname = value;
+				}
+                else
+                {
+                    Console.WriteLine("Product name too long or too small.. Not valid");
+                }
+
+            }
 		}
 
 		private decimal _price;
@@ -49,9 +74,9 @@ namespace MyCodeLibrary
 			set { _qty = value; }
 		}
 
-		public decimal CalculateTotalPurchase()
+		public decimal CalculateTotalPurchase(float qty,decimal price)
 		{
-			decimal total = Price *Convert.ToDecimal(Quantity);
+			decimal total = price *Convert.ToDecimal(qty);
 			return total;
 		
 		}
