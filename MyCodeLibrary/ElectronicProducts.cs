@@ -9,7 +9,46 @@ namespace MyCodeLibrary
 	//Single level
     public class ElectronicProducts:Products
     {
+
+
+		private int _pid;
+
+		public int prodid
+		{
+			get { return base.ProductID; }
+			set { 
+				_pid = value; 
+				base.ProductID = _pid;	
+			}
+		}
+
+
+		private float _q;
+
+		public float Q
+		{
+			get { return base.Quantity; }
+			set { _q = value;
+				base.Quantity = _q;
+			}
+		}
+
+		private decimal _p; 
+
+		public decimal P
+		{
+			get { return base.Price; }
+			set { _p = value;
+			base.Price= _p;	
+			}
+		}
+
+
+
+
+
 		private DateTime _mfgDate;
+
 
 		public DateTime ManufactureDate
 		{
@@ -24,6 +63,17 @@ namespace MyCodeLibrary
 			get { return _watt; }
 			set { _watt = value; }
 		}
+
+		//public void CallBaseClass(int proid,float qty,decimal price)
+		//{
+		//	base.ProductID = proid;
+		//	base.Quantity = qty;	
+		//	base.Price = price;
+
+		
+		//}
+
+
 
 		public decimal CalculateDiscount()
 		{

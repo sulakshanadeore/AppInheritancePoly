@@ -14,11 +14,14 @@ namespace AppInheritancePoly
             //SimpleExampleInheritance();
             ElectronicProducts ep = new ElectronicProducts();
             Console.WriteLine( "Enter Productid ");
-            ep.ProductID=Convert.ToInt32(Console.ReadLine());
+            //ep.ProductID=Convert.ToInt32(Console.ReadLine());
+            ep.prodid = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine( "Entr price");
             ep.Price=Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("Enter qty");
             ep.Quantity=Convert.ToSingle(Console.ReadLine());
+           
+
             Customer c=new Customer();
             Console.WriteLine(  "enter custid");
             c.CustID = Convert.ToInt32(Console.ReadLine());
