@@ -8,10 +8,9 @@ namespace MyCodeLibrary
 {
     internal interface IBankAccount
     {
-
-      //variables and any type implementation is not allowed
-
-
+        //declarations are only accepted
+        //variables and any type implementation is not allowed
+       //  int IFSC { get; set; }//Auto Implemented Property
         void Deposit(int acno, decimal amt);
         void Withdraw(int acno, decimal amt);
 

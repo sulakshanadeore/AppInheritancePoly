@@ -25,7 +25,7 @@ namespace AppInheritancePoly
             Customer c=new Customer();
             Console.WriteLine(  "enter custid");
             c.CustID = Convert.ToInt32(Console.ReadLine());
-
+            
             Orders o=new Orders();
             Console.WriteLine("Enter date ");
             o.OrderDate = Convert.ToDateTime(Console.ReadLine());

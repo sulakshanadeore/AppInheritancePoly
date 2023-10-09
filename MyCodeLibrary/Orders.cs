@@ -16,7 +16,7 @@ namespace MyCodeLibrary
 		netbanking
     }
 
-    public class Orders:Customer
+    public class Orders
     {
 		private int _orderid;
 
@@ -38,16 +38,24 @@ namespace MyCodeLibrary
 		public PaymentMode GetPaymentMode
 		{
 			get { return _paymode; }
-			set { _paymode = value; }
+			set { _paymode = value;
+				
+				if (Customer.Acno > 0)
+				{
+                    Console.WriteLine(	"Ok");
+                }
+			
+			}
 		}
 
 
 		public void BookOrder(int custid,DateTime orderdate,PaymentMode paymode,float qty,decimal price)
 		{
 			Console.WriteLine("ORder booked successfully......");
-            
-			decimal amt=base.CalculateTotalPurchase(qty,price);
-            Console.WriteLine($"Order booked for customerid=  {custid} on {orderdate} , payment recieved by {paymode} for a qty of {qty} @ theprice of {price} and the total price ={amt}");
+		//	string s=string.Concat(base.Custname, base.Title);
+		//string s=	base.Custname + base.Title;
+			//decimal amt=base.CalculateTotalPurchase(qty,price);
+            //Console.WriteLine($"Order booked for customerid=  {custid}   , {s}  on {orderdate} , payment recieved by {paymode} for a qty of {qty} @ theprice of {price} and the total price ={amt}");
 
 
         }

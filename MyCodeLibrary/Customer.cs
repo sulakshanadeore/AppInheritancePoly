@@ -24,5 +24,27 @@ namespace MyCodeLibrary
 		}
 
 
+		//Dr/Mr/Mrs/Ar/Vd
+		private string _title;
+
+		protected internal string Title
+		{
+			get { return _title; }
+			set { _title = value; }
+		}
+
+		private static int _bankAcno;
+
+		static internal  int Acno
+		{
+			get { return _bankAcno; }
+			set { _bankAcno = value; }
+		}
+
+
+
+
+
+
 	}
 }
